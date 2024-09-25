@@ -11,8 +11,8 @@ posteos = [
 
 @app.route('/')
 def inicio():
-    print('hola')
-    return 'Bienvenido a mi aplicacion amigos'
+   
+    return 'Login Welcome Back'
 
 @app.route('/posteos', methods=['GET', 'POST'])
 def gestion_posteos():
@@ -43,7 +43,7 @@ def gestion_posteo(id):
         limite = len(posteos)
         if limite < id:
             return {
-                'message': 'El producto no existe'
+                'message': 'El posteo no existe'
             }
         else: 
             return {
@@ -54,13 +54,13 @@ def gestion_posteo(id):
         limite = len(posteos)
         if limite < id:
             return {
-                'message': 'El producto no existe'
+                'message': 'El posteo no existe'
             }
         else:
             data = request.get_json()
             posteos[id] = data
             return {
-                'message': 'Producto actualizado exitosamente'
+                'message': 'Posteo actualizado exitosamente'
         } 
     
     elif request.method=='DELETE':
@@ -72,7 +72,7 @@ def gestion_posteo(id):
         else:
             del posteos[id]
             return {
-                'message': 'Prodcuto eliminado exitosamente'
+                'message': 'Posteo eliminado exitosamente'
         } 
 
 
