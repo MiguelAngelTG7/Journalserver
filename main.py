@@ -1,10 +1,10 @@
+from dataclasses import fields
 from flask import Flask, request
 from flask_sqlalchemy import SQLAlchemy 
 from sqlalchemy import Column, types, func
 from flask_restful import Resource, Api
 from marshmallow_sqlalchemy import SQLAlchemyAutoSchema
 from flask_cors import CORS
-from datetime import datetime
 
 app = Flask(__name__)
 
