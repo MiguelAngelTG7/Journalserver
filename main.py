@@ -1,4 +1,3 @@
-from dataclasses import fields
 from flask import Flask, request
 from flask_sqlalchemy import SQLAlchemy 
 from sqlalchemy import Column, types, func
@@ -45,9 +44,7 @@ class PosteoDTO(SQLAlchemyAutoSchema):
         model = Posteo
         fields = ("id", "title", "body", "created_at", "updated_at")
 
-    created_at = fields.DateTime(format="%Y-%m-%d %H:%M:%S")
-    updated_at = fields.DateTime(format="%Y-%m-%d %H:%M:%S")
-
+    
 class PosteoController(Resource):
     # Método para obtener un posteo por ID
     def get(self):
