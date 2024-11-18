@@ -10,7 +10,7 @@ app = Flask(__name__)
 CORS(app, resources=['*'], allow_headers=['*'], methods=['GET','POST','PUT','DELETE'])
 
 # dialect://nombre:password@host/db
-app.config['SQLALCHEMY_DATABASE_URI']='postgresql://postgres:root@localhost/journal'
+app.config['SQLALCHEMY_DATABASE_URI']='postgresql://postgres:root@localhost/journalbook'
 
 api = Api(app=app)
 
@@ -37,7 +37,7 @@ def inicializador():
 # Nueva ruta para mostrar el mensaje de bienvenida
 @app.route('/')
 def welcome():
-    return "Bienvenido a tu Diario Virtual!"
+    return "Bienvenido a tu Diario Virtual! El servidor esta OK!"
 
 class PosteoDTO(SQLAlchemyAutoSchema):
     class Meta:
